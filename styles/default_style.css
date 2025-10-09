@@ -1,0 +1,256 @@
+:root {
+  /* Dark Mode Defaults */
+  --bg: #1F2A28;
+  --nav-bg: #2E3C3B;
+  --text: #F2F6F5;
+  --nav-text: #E0ECEA;
+    --a-text: #c1ccca;
+  --highlight-bg: #3F5F5A;
+  --border: #4C6663;
+
+  /* Light Mode Overrides (optional for future toggle) */
+  @media (prefers-color-scheme: light) {
+    :root {
+  --bg: #EAF4F4;
+  --nav-bg: #C3E0DD;
+  --text: #22343C;
+  --nav-text: #1B2A2E;
+  --highlight-bg: #A2CBC7;
+  --border: #A9C7C4;
+    }
+  }
+}
+
+body.light-mode {
+  --bg: #EAF4F4;
+  --nav-bg: #C3E0DD;
+  --text: #22343C;
+  --nav-text: #1B2A2E;
+  --highlight-bg: #A2CBC7;
+  --border: #A9C7C4;
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+nav {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+nav h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--nav-text);
+  text-decoration: none;
+}
+
+nav a,
+a[href^="#"],
+a[href^="/"] {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after,
+a[href^="#"]::after,
+a[href^="/"]::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--nav-text);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+a[href^="#"]:hover::after,
+a[href^="/"]:hover::after {
+  width: 100%;
+}
+
+a {
+  color: var(--a-text);
+  /* text-decoration: none; */
+}
+
+main {
+  padding: 2rem;
+}
+
+.intro {
+  margin-bottom: 2rem;
+}
+
+.highlight-card {
+  background-color: var(--highlight-bg);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: var(--nav-text);
+  cursor: pointer;
+}
+
+.calendar {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.calendar-header,
+.time-row {
+  display: grid;
+  grid-template-columns: 80px repeat(5, 1fr);
+}
+
+.calendar-header {
+  background-color: var(--highlight-bg);
+  font-weight: bold;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.time-label {
+  padding: 0.5rem;
+  text-align: right;
+  border-right: 1px solid var(--border);
+}
+
+.slot {
+  height: 40px;
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.available {
+  background-color: #A2CBC7; /* lighter aqua */
+}
+
+.reserved {
+  background-color: #4F6F6B; /* darker aqua-blue for contrast */
+}
+
+
+.flashcard-intro {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+#topic-select {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+#flashcard-area {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#flashcard-content {
+  font-size: 1.2rem;
+  padding: 1rem;
+  background-color: var(--highlight-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+#next-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#next-button:hover {
+  background-color: var(--nav-text);
+  color: var(--nav-bg);
+}
+
+#answer-input {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--bg);
+  width: 50%;
+}
+
+#check-answer-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#check-answer-button:hover {
+  background-color: var(--nav-text);
+  color: var(--nav-bg);
+}
+
+#feedback {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  display: none;
+}
+
+#next-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+#next-button:hover {
+  background-color: var(--nav-text);
+  color: var(--nav-bg);
+}
