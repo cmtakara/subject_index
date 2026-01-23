@@ -1,6 +1,10 @@
 const toggleButton = document.getElementById('theme-toggle');
 const iconSpan = document.getElementById('theme-icon');
 
+if (document.referrer.includes("partner.com")) {
+  document.getElementById("navbar").style.display = "none";
+}
+
 function updateIcon(isLight) {
   iconSpan.textContent = isLight ? '☀️' : '🌙';
 }
