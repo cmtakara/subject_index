@@ -1,7 +1,7 @@
 const toggleButton = document.getElementById('theme-toggle');
 const iconSpan = document.getElementById('theme-icon');
 
-if (document.referrer.includes("partner.com")) {
+if (document.referrer.includes("cmtakara.github.io")) {
   document.getElementById("navbar").style.display = "none";
 }
 
