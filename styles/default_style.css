@@ -1,33 +1,34 @@
 :root {
   /* Dark Mode Defaults */
-  --bg: #1F2A28;
-  --nav-bg: #2E3C3B;
-  --text: #F2F6F5;
-  --nav-text: #E0ECEA;
-    --a-text: #c1ccca;
-  --highlight-bg: #3F5F5A;
-  --border: #4C6663;
+  --bg: hsl(231, 100%, 5%);
+  --nav-bg: hsl(231, 100%, 48%);
+  --text: hsl(231, 100%, 85%);
+  --nav-text: hsl(231, 100%, 85%);
+  /* --a-text: #c1ccca; */
+  --highlight-bg: hsl(231, 100%, 85%);
+  --border: #EAF4F4;
 
   /* Light Mode Overrides (optional for future toggle) */
   @media (prefers-color-scheme: light) {
     :root {
-  --bg: #EAF4F4;
-  --nav-bg: #C3E0DD;
-  --text: #22343C;
-  --nav-text: #1B2A2E;
-  --highlight-bg: #A2CBC7;
-  --border: #A9C7C4;
+      --bg: #EAF4F4;
+      --nav-bg: hsl(231, 100%, 48%);
+      --text: hsl(231, 100%, 48%);
+      --nav-text: hsl(231, 100%, 85%);
+      --highlight-bg: hsl(231, 100%, 85%);
+      --border: hsl(231, 100%, 48%);
     }
   }
 }
 
+
 body.light-mode {
   --bg: #EAF4F4;
-  --nav-bg: #C3E0DD;
-  --text: #22343C;
-  --nav-text: #1B2A2E;
-  --highlight-bg: #A2CBC7;
-  --border: #A9C7C4;
+  --nav-bg: hsl(231, 100%, 48%);
+  --text: hsl(231, 100%, 48%);
+  --nav-text: hsl(231, 100%, 85%);
+  --highlight-bg: hsl(231, 100%, 85%);
+  --border: hsl(231, 100%, 48%);
 }
 
 
@@ -154,11 +155,13 @@ main {
 }
 
 .available {
-  background-color: #A2CBC7; /* lighter aqua */
+  background-color: #A2CBC7;
+  /* lighter aqua */
 }
 
 .reserved {
-  background-color: #4F6F6B; /* darker aqua-blue for contrast */
+  background-color: #4F6F6B;
+  /* darker aqua-blue for contrast */
 }
 
 
